@@ -10,12 +10,12 @@ function renderSongList(songs) {
     songUL.innerHTML += `<li>
       <img class="invert" src="media-player-music-music-symbol.svg" alt=""/>
       <div class="info">
-        <div>${decodeURIComponent(song.split("%5C").pop())}</div>
+        <div>${decodeURIComponent(song.split("/").pop())}</div>
         <div>Song Artist</div>
       </div>
       <div class="playnow">
         <span>Play Now</span>
-        <img class="invert" src="media-player-ui-button-play.svg" alt=""/>
+        <img class="invert" src="img/media-player-ui-button-play.svg" alt=""/>
       </div>
     </li>`;
   }
