@@ -1,0 +1,73 @@
+.red-border {
+  border: 2px solid red;
+  margin: 3px;
+}
+
+.p-1 {
+  padding: 10px;
+}
+
+.bg-black {
+  background-color: black;
+  color: white;
+}
+.bg-grey {
+  /* margin: 5px; */
+  background-color: #121212;
+  color: white;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.m-1 {
+  margin: 5px;
+}
+
+.rounded {
+  border-radius: 7px;
+}
+
+/* 1. Standard property for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #444 #1e1e1e; /* thumb color | track color */
+}
+
+/* 2. Webkit Browsers (Chrome, Safari, Edge) */
+/* The entire scrollbar area */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the vertical scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+}
+
+/* The background of the scrollbar (track) */
+::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Deep dark background */
+  border-radius: 10px;
+}
+
+/* The draggable handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background: #444; /* Muted grey handle */
+  border-radius: 10px; /* Round corners */
+  border: 3px solid #1e1e1e; /* Creates a padding effect around the thumb */
+}
+
+/* Hover effect on the handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #666; /* Lightens slightly on hover */
+}
