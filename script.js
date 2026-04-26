@@ -8,7 +8,7 @@ function renderSongList(songs) {
   songUL.innerHTML = "";
   for (const song of songs) {
     songUL.innerHTML += `<li>
-      <img class="invert" src="media-player-music-music-symbol.svg" alt=""/>
+      <img class="invert" src="img/media-player-music-music-symbol.svg" alt=""/>
       <div class="info">
         <div>${decodeURIComponent(song.split("/").pop())}</div>
         <div>Song Artist</div>
