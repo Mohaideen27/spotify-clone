@@ -36,21 +36,25 @@ function formatTime(seconds) {
   let formattedSeconds = remainingSeconds.toString().padStart(2, "0");
   return `${minutes}:${formattedSeconds}`;
 }
+
 async function getSongs(folder) {
-  let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/`);
-  let response = await a.text();
-  let div = document.createElement("div");
-  div.innerHTML = response;
-  let as = div.getElementsByTagName("a");
-  let songs = [];
-  for (let index = 0; index < as.length; index++) {
-    const element = as[index];
-    if (element.href.endsWith(".mp3")) {
-      songs.push(element.href);
-    }
-  }
-  return songs;
+  return albumData[folder].map((songs) => `/songs/${folder}/${songs}`);
 }
+// async function getSongs(folder) {
+//   let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/`);
+//   let response = await a.text();
+//   let div = document.createElement("div");
+//   div.innerHTML = response;
+//   let as = div.getElementsByTagName("a");
+//   let songs = [];
+//   for (let index = 0; index < as.length; index++) {
+//     const element = as[index];
+//     if (element.href.endsWith(".mp3")) {
+//       songs.push(element.href);
+//     }
+//   }
+//   return songs;
+// }
 
 const playMusic = (track, pause = false) => {
   currentSong.src = track;
@@ -59,7 +63,7 @@ const playMusic = (track, pause = false) => {
   }
   play.src = "img/pause.svg";
   document.querySelector(".songinfo").innerHTML = decodeURIComponent(
-    track.split("%5C").pop(),
+    track.split("/").pop(),
   );
   document.querySelector(".songtime").innerHTML = "00:00/00:00";
 };
